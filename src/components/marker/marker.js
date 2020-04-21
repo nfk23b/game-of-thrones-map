@@ -6,14 +6,23 @@ const MapMarker = ({ house, position, name }) => {
     const icon = L.icon({
         iconUrl: houseImage(house),
         iconSize: [40, 40],
-        iconAnchor: [40, 40],
+        iconAnchor: [20, 0],
         shadowUrl: null,
         shadowSize: null,
         shadowAnchor: null
     });
 
     return (
-        <Marker position={position} icon={icon}>
+        <Marker
+            position={position}
+            icon={icon}
+            onMouseOver={(e) => {
+                e.target.openPopup();
+            }}
+            onMouseOut={(e) => {
+                e.target.closePopup();
+            }}
+        >
             <Popup>{name}</Popup>
         </Marker>
     );
