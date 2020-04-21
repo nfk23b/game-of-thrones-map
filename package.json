@@ -1,0 +1,45 @@
+{
+    "name": "got-task-server",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "webpack-dev-server --open --mode development",
+        "server": "node -r esm server/app.js",
+        "dev": "npm-run-all --parallel build server",
+        "start": "npm run dev",
+        "lint": "eslint --ext .js ./",
+        "lint:fix": "eslint --fix --ext .js ./"
+    },
+    "private": true,
+    "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/plugin-transform-runtime": "^7.9.0",
+        "@babel/preset-env": "^7.9.5",
+        "@babel/preset-react": "^7.9.4",
+        "@babel/runtime": "^7.9.2",
+        "babel-loader": "^8.1.0",
+        "clean-webpack-plugin": "^3.0.0",
+        "css-loader": "^3.5.2",
+        "eslint": "^6.8.0",
+        "esm": "^3.2.25",
+        "express": "^4.17.1",
+        "file-loader": "^6.0.0",
+        "fs": "0.0.1-security",
+        "html-webpack-plugin": "^4.2.0",
+        "sass-loader": "^8.0.2",
+        "style-loader": "^1.1.4",
+        "webpack": "^4.42.1",
+        "webpack-cli": "^3.3.11",
+        "webpack-dev-server": "^3.10.3",
+        "ws": "^7.0.0"
+    },
+    "dependencies": {
+        "@babel/plugin-proposal-class-properties": "^7.8.3",
+        "@material-ui/core": "^4.9.11",
+        "leaflet": "^1.6.0",
+        "npm-run-all": "^4.1.5",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-leaflet": "^2.6.3",
+        "websocket": "^1.0.31"
+    }
+}
