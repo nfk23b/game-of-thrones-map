@@ -35,23 +35,21 @@ class App extends Component {
         };
     };
 
-    updateState = (data) => {
+    updateState = ({ hero, house, x, y }) => {
         const heroesAttributes = {
-            hero: data.hero,
-            house: data.house,
-            x: data.x,
-            y: data.y
+            hero: hero,
+            house: house,
+            x: x,
+            y: y
         };
 
-        if (!this.state.heroes.some((e) => e.hero === data.hero)) {
+        if (!this.state.heroes.some((e) => e.hero === hero)) {
             this.setState({
                 heroes: [heroesAttributes, ...this.state.heroes]
             });
         } else {
             this.setState({ dataLoaded: true });
-            const index = this.state.heroes.findIndex(
-                (e) => e.hero === data.hero
-            );
+            const index = this.state.heroes.findIndex((e) => e.hero === hero);
 
             this.setState({
                 heroes: [
